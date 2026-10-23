@@ -19,6 +19,8 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
           cache: pip
+      - name: Check Python syntax
+        run: python -m compileall -q scripts tests
       - name: Linux fonts and Cairo
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y libcairo2-dev pkg-config fonts-noto-cjk fonts-dejavu-core

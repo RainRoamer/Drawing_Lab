@@ -234,7 +234,8 @@ def svg_check_cmd(args):
         tag = re.sub(r"^\{.*\}", "", el.tag)
         count[tag] = count.get(tag, 0) + 1
     print(f"SVG 有效：{args.path}")
-    print(f"  根标签: {re.sub(r'^\{.*\}', '', root.tag)}  属性: {attrs}")
+    root_tag = re.sub(r"^\{.*\}", "", root.tag)
+    print(f"  根标签: {root_tag}  属性: {attrs}")
     print("  元素计数: " + ", ".join(f"{k}={v}" for k, v in sorted(count.items())))
     if root.tag not in ("svg", "{http://www.w3.org/2000/svg}svg"):
         print("  注意：根元素不是 <svg>，可能不是合法 SVG")
