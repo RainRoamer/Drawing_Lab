@@ -1,0 +1,10 @@
+# Python 3.10+. Core dependencies are also usable without the optional renderers.
+# Install all: python -m pip install -r requirements.txt
+# Index default https://pypi.org/simple, override via DRAW_PIP_INDEX.
+Pillow>=10.1
+numpy>=1.26
+# Charts and general SVG -> PNG rendering:
+matplotlib>=3.8
+svglib>=1.5
+reportlab>=4.0,<5
+rlPyCairo>=0.3
